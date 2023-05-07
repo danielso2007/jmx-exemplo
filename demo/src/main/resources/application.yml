@@ -1,0 +1,15 @@
+spring:
+  devtools:
+    add-properties: false
+server:
+  compression:
+    enabled: true
+    min-response-size: 1
+logging:
+  level:
+    org:
+      springframework:
+        test: ERROR
+      hibernate: warn
+      xnio: warn
+      jboss: warn
