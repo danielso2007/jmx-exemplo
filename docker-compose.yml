@@ -6,7 +6,7 @@ services:
     container_name: estudo-jmx-virtualvm
     restart: on-failure
     environment:
-      - JVM_OPTS="-Xms64m -Xmx128m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=128m -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.local.only=false"
+      - JVM_OPTS="-XX:+UseG1GC -Xms64m -Xmx128m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=128m -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.local.only=false"
     ports:
       - "8081:8080"
       - "9999:9999"

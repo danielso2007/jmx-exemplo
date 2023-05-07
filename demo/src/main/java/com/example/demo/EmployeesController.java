@@ -20,6 +20,7 @@ class EmployeesController {
 
     @GetMapping("/employees")
     List<Employee> all() {
+      Runtime.getRuntime().gc();
       List<Employee> list = new ArrayList<>();
       list.add(new Employee(1L,"Daniel", "Admin"));
       list.add(new Employee(323L,"Denis", "Admin"));
@@ -36,6 +37,7 @@ class EmployeesController {
   
     @GetMapping("/employees/{id}")
     Employee one(@PathVariable Long id) {
+      Runtime.getRuntime().gc();
       Employee newEmployee = new Employee("Daniel", "Admin");
       log.info("Update employee...");
       return newEmployee;
